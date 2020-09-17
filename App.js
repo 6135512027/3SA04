@@ -3,10 +3,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  
+  const doIt = () => {
+    console.log("JAJA")
+  }
   return (
     <View style={styles.container}>
-      <Text>I AM GROOF</Text>
-      <StatusBar style="auto" />
+      <Text onPress={doIt}>I AM GROOF</Text>
+      <StatusBar style="auto"/>
     </View>
   );
 }
