@@ -3,18 +3,23 @@ import { StatusBar } from 'expo-status-bar';
 import { View, Text, FlatList,TouchableHighlight, StyleSheet,ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+
+
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110' },
-    { place: 'Trang', code: '92000' },
-    { place: 'Chiangmai', code: '50000' },
-    { place: 'Khonkaen', code: '40000' },
-    { place: 'Chonburi', code: '20000' },
+    { place: 'จังหวัดแพร่', code: '54000' , a: 'อำเภอหนองม่วงไข่' },
+    { place: 'จังหวัดน่าน', code: '55000', a: 'อำเภอสองแคว' },
+    { place: 'จังหวัดพะเยา', code: '56000', a: 'อำเภอภูกามยาว' },
+    { place: 'จังหวัดเชียงราย', code: '57000', a: 'อำเภอเชียงแสน' },
+    { place: 'จังหวัดแม่ฮ่องสอน', code: '58000', a: 'อำเภอปาย' },
 ]
 
-const ZipItem = ({ place, code, navigation }) => (
+
+
+const ZipItem = ({ place, code, navigation , a }) => (
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
         <View style={styles.center}>
             <Text style={styles.front}>{place}</Text>
+            <Text style={styles.front3}>{a}</Text>
             <Text style={styles.front2}>{code}</Text>
         </View>
     </TouchableHighlight>
@@ -53,12 +58,16 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     front: {
-        fontSize: 30,
+        fontSize: 35,
         color: 'white',
     },
     front2: {
         fontSize: 20,
-        color: 'white',
+        color: 'black',
+    },
+    front3: {
+        fontSize: 20,
+        color: 'red',
     },
     
 });
